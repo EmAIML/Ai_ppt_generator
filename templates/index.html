@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple PPT AI</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<div class="container">
+<h1>PPT Generator AI</h1>
+<p>Enter topic and slide count:</p>
+
+
+<form id="pptForm" method="POST" action="/generate">
+<input type="text" name="topic" placeholder="Enter topic" required>
+<input type="number" name="slides" min="2" max="15" value="5" />
+<button type="submit">Generate PPT</button>
+</form>
+
+
+<p class="note">PPT will download automatically.</p>
+</div>
+</body>
+</html>

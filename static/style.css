@@ -1,0 +1,45 @@
+body {
+font-family: Arial;
+background: #f0f8ff;
+display: flex;
+justify-content: center;
+margin-top: 60px;
+}
+
+
+.container {
+background: white;
+padding: 30px;
+width: 400px;
+border-radius: 10px;
+text-align: center;
+box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+
+input {
+width: 90%;
+padding: 10px;
+margin-bottom: 12px;
+}
+
+
+button {
+padding: 10px 20px;
+background: #007bff;
+border: none;
+color: white;
+cursor: pointer;
+}
+
+
+button:hover {
+background: #0056b3;
+}
+
+
+.note {
+font-size: 12px;
+color: gray;
+margin-top: 15px;
+}

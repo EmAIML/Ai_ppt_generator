@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Slides</title>
+</head>
+<body>
+    <h1>Edit Slide Content</h1>
+    <form method="POST">
+        {% for slide in slides %}
+            <h3>Slide {{ loop.index }}</h3>
+            <label>Title:</label><br>
+            <input type="text" name="title_{{ loop.index0 }}" value="{{ slide.title }}"><br><br>
+
+            <label>Content:</label><br>
+            <textarea name="content_{{ loop.index0 }}" rows="5" cols="60">{{ slide.content }}</textarea><br><br>
+        {% endfor %}
+
+        <label>Contact Info:</label><br>
+        <input type="text" name="contact_info"><br><br>
+
+        <input type="submit" value="Regenerate Presentation">
+
+        {% for i, slide in enumerate(slides) %}
+    <div class="slide-edit">
+      <label for="title_{{ i }}">Title {{ i+1 }}:</label>
+      <input type="text" id="title_{{ i }}" name="title_{{ i }}" value="{{ slide.title }}">
+
+      <label for="content_{{ i }}">Content {{ i+1 }}:</label>
+      <textarea id="content_{{ i }}" name="content_{{ i }}" rows="4">{{ slide.content }}</textarea>
+
+      <label for="image_prompt_{{ i }}">Image Prompt {{ i+1 }} (optional):</label>
+      <input type="text" id="image_prompt_{{ i }}" name="image_prompt_{{ i }}" value="{{ slide.image_prompt or '' }}">
+    </div>
+    <hr>
+  {% endfor %}
+
+  <label for="contact_info">Contact Info:</label>
+  <input type="text" id="contact_info" name="contact_info" value="">
+
+  <input type="submit" value="Regenerate Presentation">
+    </form>
+</body>
+</html>
